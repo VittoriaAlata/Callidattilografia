@@ -140,6 +140,24 @@ public class Lettera {
         return lettera;
     }
 
+    public static int[][] g(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
+                {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
+                {carrello+10, rullo-11}, {carrello+10, rullo-12}, {carrello+10, rullo-13}, {carrello+10, rullo-14}, {carrello+10, rullo-15}, {carrello+10, rullo-16}, {carrello+10, rullo-17}, {carrello+10, rullo-18}, {carrello+10, rullo-19},
+                {carrello+9, rullo-20},
+                {carrello+8, rullo-20},
+                {carrello+7, rullo-20},
+                {carrello+6, rullo-19}, {carrello+6,  rullo-18}, {carrello+6, rullo-17}, {carrello+6, rullo-16}, {carrello+6, rullo-15}, {carrello+6, rullo-14}, {carrello+6, rullo-13}, {carrello+6, rullo-12}, {carrello+6, rullo-11}, {carrello+6, rullo-10}, {carrello+6, rullo-9}, {carrello+6, rullo-8}, {carrello+6, rullo-7}, {carrello+6, rullo-6}, {carrello+6, rullo-5}, {carrello+6, rullo-4}, {carrello+6, rullo-3}, {carrello+6, rullo-2}, {carrello+6, rullo-1}, {carrello+6, rullo}, {carrello+6, rullo+1}, {carrello+6, rullo+2}, {carrello+6, rullo+3},
+                {carrello+3, rullo-7}, {carrello+4, rullo-6}, {carrello+5, rullo-5}, {carrello+7, rullo-4}, {carrello+8, rullo-3}, {carrello+9, rullo-2}, {carrello+10, rullo-1}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
     public static int[][] h(char[][] screen, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
@@ -152,6 +170,38 @@ public class Lettera {
                 {carrello+7, rullo-4}, {carrello+8, rullo-5}, {carrello+9, rullo-5}, {carrello+10, rullo-5},
                 {carrello+11, rullo-4}, {carrello+11, rullo-3}, {carrello+11, rullo-2}, {carrello+11, rullo-1},
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] i(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo}, {carrello+4, rullo}, {carrello+5, rullo}, //Linea
+                {carrello+6, rullo-1}, {carrello+7, rullo-1}, {carrello+8, rullo-1}, //Linea
+                {carrello+9, rullo-2}, {carrello+10, rullo-2}, //Linea
+                {carrello+11, rullo-3}, //Punto
+                {carrello+12, rullo-4}, {carrello+13, rullo-4}, //Linea
+                {carrello+14, rullo-5}, //Punto
+                {carrello+15, rullo-6}, //Punto
+                {carrello+16, rullo-7}, //Punto
+                {carrello+16, rullo-8}, //Punto
+                {carrello+16, rullo-9}, //Punto
+                {carrello+16, rullo-10}, //Punto
+                {carrello+16, rullo-11}, {carrello+15, rullo-11}, //Linea
+                {carrello+14, rullo-10}, //Punto
+                {carrello+13, rullo-9}, //Punto
+                {carrello+12, rullo-8}, //Punto
+                {carrello+11, rullo-7}, //Punto
+                {carrello+11, rullo-6}, //Punto
+                {carrello+11, rullo-5}, //Punto
+                {carrello+11, rullo-4}, //Punto
+                {carrello+12, rullo-2}, //Punto
+                {carrello+13, rullo-1}, //Punto
+                {carrello+14, rullo}, {carrello+15, rullo}, {carrello+16, rullo}, {carrello+17, rullo}, {carrello+18, rullo} //Linea
         };
 
         for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
@@ -179,7 +229,232 @@ public class Lettera {
         return lettera;
     }
 
+    public static int[][] m(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
+                {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
+                {carrello+10, rullo-11}, {carrello+10, rullo-12}, {carrello+10, rullo-13}, {carrello+10, rullo-14}, {carrello+10, rullo-15}, {carrello+10, rullo-16}, {carrello+10, rullo-17}, {carrello+10, rullo-18}, {carrello+10, rullo-19},
+                {carrello+9, rullo-20},
+                {carrello+8, rullo-20},
+                {carrello+7, rullo-20},
+                {carrello+6, rullo-19}, {carrello+6,  rullo-18}, {carrello+6, rullo-17}, {carrello+6, rullo-16}, {carrello+6, rullo-15}, {carrello+6, rullo-14}, {carrello+6, rullo-13}, {carrello+6, rullo-12}, {carrello+6, rullo-11}, {carrello+6, rullo-10}, {carrello+6, rullo-9}, {carrello+6, rullo-8}, {carrello+6, rullo-7}, {carrello+6, rullo-6},
+                {carrello+7, rullo-4}, {carrello+8, rullo-3}, {carrello+9, rullo-2}, {carrello+10, rullo-1},
+                {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] n(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
+                {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
+                {carrello+10, rullo-11}, {carrello+10, rullo-12}, {carrello+10, rullo-13}, {carrello+10, rullo-14}, {carrello+10, rullo-15}, {carrello+10, rullo-16}, {carrello+10, rullo-17}, {carrello+10, rullo-18}, {carrello+10, rullo-19},
+                {carrello+9, rullo-20},
+                {carrello+8, rullo-20},
+                {carrello+7, rullo-20},
+                {carrello+6, rullo-19}, {carrello+6,  rullo-18}, {carrello+6, rullo-17}, {carrello+6, rullo-16}, {carrello+6, rullo-15}, {carrello+6, rullo-14}, {carrello+6, rullo-13}, {carrello+6, rullo-12}, {carrello+6, rullo-11}, {carrello+6, rullo-10}, {carrello+6, rullo-9}, {carrello+6, rullo-8}, {carrello+6, rullo-7}, {carrello+6, rullo-6},
+                {carrello+7, rullo-4}, {carrello+8, rullo-3}, {carrello+9, rullo-2}, {carrello+10, rullo-1},
+                {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
     public static int[][] o(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] p(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] q(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] r(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] s(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] t(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] u(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] v(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] w(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] x(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] y(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        int[][] lettera = {
+                {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
+                {carrello+2, rullo-5}, {carrello+3, rullo-5}, {carrello+4, rullo-5}, {carrello+5 , rullo+5},
+                {carrello+6, rullo-1}, {carrello+6, rullo-2}, {carrello+6, rullo-3}, {carrello+6, rullo-4}, {carrello+6, rullo-5}, {carrello+6, rullo-6},
+                {carrello+5, rullo-7}, {carrello+4, rullo-7},
+                {carrello+7, rullo-6}, {carrello+8, rullo-7},
+                {carrello, rullo}
+        };
+
+        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+    public static int[][] z(char[][] screen, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},

@@ -27,10 +27,25 @@ public class Manuale {
             case "d": Lettera.d(screen, 0, 26); break;
             case "e": Lettera.e(screen, 0, 26); break;
             case "f": Lettera.f(screen, 0, 26); break;
+			case "g": Lettera.g(screen, 0, 26); break;
             case "h": Lettera.h(screen, 0, 26); break;
+			case "i": Lettera.i(screen, 0, 26); break;
             case "l": Lettera.l(screen, 0, 26); break;
+			case "m": Lettera.m(screen, 0, 26); break;
+			case "n": Lettera.n(screen, 0, 26); break;
             case "o": Lettera.o(screen, 0, 26); break;
-            case "BL": BresenhamLine(screen); break;
+            case "p": Lettera.p(screen, 0, 26); break;
+            case "q": Lettera.q(screen, 0, 26); break;
+            case "r": Lettera.r(screen, 0, 26); break;
+            case "s": Lettera.s(screen, 0, 26); break;
+            case "t": Lettera.t(screen, 0, 26); break;
+            case "u": Lettera.u(screen, 0, 26); break;
+            case "v": Lettera.v(screen, 0, 26); break;
+            case "w": Lettera.w(screen, 0, 26); break;
+            case "x": Lettera.x(screen, 0, 26); break;
+            case "y": Lettera.y(screen, 0, 26); break;
+            case "z": Lettera.z(screen, 0, 26); break;
+            case "BL":BresenhamLine(screen);	break;
             default:
                 System.out.println("Il carattere: \"" + LetteraDesiderata + "\" non è registrato nel programma per l'insegnamento visivo della scrittura");
                 break;
