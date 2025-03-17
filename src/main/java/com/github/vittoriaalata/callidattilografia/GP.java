@@ -57,7 +57,7 @@ public class GP {
                 "         ***                                                                                        \n" +
                 "   ****   ***                                                                                       \n" +
                 " *******  **                                                                                        \n" +
-                "(c) 2024 Vittoria. Tutti i diritti riservati.\n");
+                "(c) 2024 MIT LICENSE Vittoria Italia Azzurra Nicole\n");
         String Modalita = getInput("\nInserisci la modalità di insegnamento? Insegnamento Manuale [M] / Insegnamento Guidato [G]:");
         if (Modalita.equals("M")) {
             Manuale.main(null);
