@@ -59,12 +59,8 @@ public class GP {
                 " *******  **                                                                                        \n" +
                 "(c) 2024 MIT LICENSE Vittoria Italia Azzurra Nicole\n");
         String Modalita = getInput("\nInserisci la modalità di insegnamento? Insegnamento Manuale [M] / Insegnamento Guidato [G]:");
-        if (Modalita.equals("M")) {
-            Manuale.main(null);
-        }
-        if (Modalita.equals("G")){
-            Guidato.main(null);
-        }
+        if (Modalita.equals("M")) Manuale.main(null);
+        if (Modalita.equals("G")) Guidato.main(null);
     }
     public String getInput(String prompt) throws IOException {
         System.out.print(prompt);
