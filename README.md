@@ -51,7 +51,7 @@ Per compilare il progetto da riga di comando, segui questi passaggi:
    
 2. Compila i file Java:
    ```sh
-    javac -d out -sourcepath src/main/java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/*.java src/main/java/com/github/vittoriaalata/callidattilografia/GP.java
+    javac -d out -sourcepath src/main/java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/*.java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/GP.java
 
 3. Esecuzione
    ```sh
