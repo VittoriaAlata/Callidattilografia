@@ -27,4 +27,4 @@ jobs:
 
       # Step 4: Esecuzione del programma
       - name: Esecuzione del programma
-        run: echo "M" | java -cp out com.github.vittoriaalata.callidattilografia.Calli.GP
+        run: java -cp out com.github.vittoriaalata.callidattilografia.Calli.GP | sleep 2 | echo M
