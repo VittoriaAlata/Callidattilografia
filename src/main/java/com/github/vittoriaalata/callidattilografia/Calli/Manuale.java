@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
+import static com.github.vittoriaalata.callidattilografia.Calli.Dizionari.GiunzioneLettereCarrelloFinale;
+import static com.github.vittoriaalata.callidattilografia.Calli.Dizionari.GiunzioneLettereRulloFinale;
 import static com.github.vittoriaalata.callidattilografia.Calli.GP.drawLine;
 
 
@@ -41,10 +43,6 @@ public class Manuale {
         */
         String let;
         int ci = 0, ri = 26, cfl, rfl;
-        HashMap<String, Integer> GiunzioneLettereCarrelloFinale = new HashMap<>();
-        GiunzioneLettereCarrelloFinale.put("a",10);GiunzioneLettereCarrelloFinale.put("f",10);GiunzioneLettereCarrelloFinale.put("@",10);GiunzioneLettereCarrelloFinale.put("_",10);
-        HashMap<String, Integer> GiunzioneLettereRulloFinale = new HashMap<>();
-        GiunzioneLettereRulloFinale.put("a",5);GiunzioneLettereRulloFinale.put("f",-5);GiunzioneLettereRulloFinale.put("@",5);GiunzioneLettereRulloFinale.put("_",5);
             char c[] = LetteraDesiderata.toCharArray();
             for (char l : c) {
                 let = String.valueOf(l);
