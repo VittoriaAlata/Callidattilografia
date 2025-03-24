@@ -76,7 +76,7 @@ public class Manuale {
                     case "*":int x0 = igetInput("x0: "); int y0 = igetInput("y0: "); int x1 = igetInput("x1: "); int y1 = igetInput("y1: "); BresenhamLine(piano, x0, y0, x1, y1);	System.out.println(x0 + y0 + x1 + y1); break;
                     default:
                         System.out.println("Il carattere: \"" + LetteraDesiderata + "\" non è registrato nel programma per l'insegnamento visivo della scrittura");
-                        break;
+                        return;
                 }
                 cfl = GiunzioneLettereCarrelloFinale.get(let);
                 ci = ci + cfl + 1;
@@ -92,7 +92,9 @@ public class Manuale {
     }
     private String getInput(String prompt) throws IOException {
         System.out.print(prompt);
-        return reader.readLine().trim();
+        String input = reader.readLine().trim();
+        if (input == null) input = "a";
+        return input;
     }
     private Integer igetInput(String prompt) throws IOException {
         System.out.print(prompt);
@@ -125,7 +127,7 @@ public class Manuale {
         drawLine(x0, y0, x1, y1, piano);
     }
     public static void main(String[] args) throws IOException, InterruptedException {
-        Manuale Dattilo = new Manuale();
-        Dattilo.start();
+        Manuale Calli = new Manuale();
+        Calli.start();
     }
 }

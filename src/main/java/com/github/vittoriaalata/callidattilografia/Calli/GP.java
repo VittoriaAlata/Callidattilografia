@@ -133,7 +133,7 @@ public class GP {
             }
         }
     }
-    public static void stellenelcielo() throws InterruptedException { //Stelle nel cielo
+    public static void stellenelcielo() { //Stelle nel cielo
         int r = 1, xc = 5, yc = 5;
         for (int i = 0; i <= 180; i++) {
             double angle = Math.toRadians(i); int x = (int) (r * Math.cos(angle)) + xc; int y = (int) (r * Math.sin(angle)) + yc;
@@ -146,9 +146,11 @@ public class GP {
         }
     }
 
-    public String getInput(String prompt) throws IOException {
+    private String getInput(String prompt) throws IOException {
         System.out.print(prompt);
-        return reader.readLine().trim();
+        String input = reader.readLine().trim();
+        if (input == null) input = "M";
+        return input;
     }
     public static void main(String[] args) throws IOException, InterruptedException {
         GP Dattilo = new GP();
