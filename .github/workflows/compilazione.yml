@@ -1,0 +1,30 @@
+name: Compilazione ed Esecuzione
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout del codice sorgente
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Creazione della cartella "out"
+      - name: Crea cartella out
+        run: mkdir -p out
+
+      # Step 3: Compilazione dei file Java
+      - name: Compilazione del codice Java
+        run: javac -d out -sourcepath src/main/java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/*.java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/GP.java
+
+      # Step 4: Esecuzione del programma
+      - name: Esecuzione del programma
+        run: java -cp out com.github.vittoriaalata.callidattilografia.Calli.GP
