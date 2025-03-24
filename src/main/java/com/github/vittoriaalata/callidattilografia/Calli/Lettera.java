@@ -6,18 +6,26 @@ import static com.github.vittoriaalata.callidattilografia.Calli.GP.STAMPpixel3D;
 public class Lettera {
 
     public static int[][] a(char[][] screen, int carrello, int rullo) throws InterruptedException {
+        /*
+                Applicazione della modifica #0 & #1
+        Ridisegno della lettera 'a', eliminate 2 righe per avere la lettera più simmetrica
+        considerando l'unità di misura: il carattere [] rettangolare.
+        Ideato il 23/03/2025 su documenti della Callidattilografia in formato cartaceo.
+        */
         int[][] lettera = {
                 //CERCHIO
-                {carrello+3, rullo}, {carrello+2, rullo},
-                {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
-                {carrello+2, rullo+5}, {carrello+3, rullo+5},
-                {carrello+4, rullo+5}, {carrello+5 , rullo+5},
-                {carrello+6, rullo+4}, {carrello+6, rullo+3}, {carrello+6, rullo+2}, {carrello+6, rullo+1},
-                {carrello+5, rullo}, {carrello+4, rullo},
+                {carrello+5, rullo}, {carrello+4, rullo}, {carrello+3, rullo}, {carrello+2, rullo},
+                {carrello+1, rullo+1}, {carrello+1, rullo+2},
+                {carrello+2, rullo+3}, {carrello+3, rullo+3}, {carrello+4, rullo+3}, {carrello+5 , rullo+3},
+                {carrello+6, rullo+2}, {carrello+6, rullo+1},
                 //CODINA
-                {carrello+7, rullo+5}, {carrello+8, rullo+5}, {carrello+9, rullo+5}, {carrello+10, rullo+4},
+                //Penna che scende e ricalca la code della lettera
+                {carrello+6, rullo+1}, {carrello+6, rullo+2},
+                //************************************************
+                {carrello+7, rullo+3}, {carrello+8, rullo+3}, {carrello+9, rullo+3}, {carrello+10, rullo+2},
                 //PUNTO DI GUINTURA
-                {carrello, rullo+5}
+                //eliminato nella modifica #0
+                //{carrello, rullo+5}
         };
 
         for (int[] punto : lettera) { //Per ogni array di coordinate nell' array della lettera
@@ -28,23 +36,31 @@ public class Lettera {
 
 
     public static int[][][] a3D(String[][] piano3D, int carrello, int rullo) throws InterruptedException {
+        /*
+                Applicazione della modifica #0 & #1
+        Ridisegno della lettera 'a', eliminate 2 righe per avere la lettera più simmetrica
+        considerando l'unità di misura: il carattere [] rettangolare.
+        Ideato il 23/03/2025 su documenti della Callidattilografia in formato cartaceo.
+        */
         int[][][] lettera = {
                 {
                         //CERCHIO
-                        {carrello + 3, rullo, 2}, {carrello + 2, rullo, 2}, {carrello + 1, rullo + 1, 2},
-                        {carrello + 1, rullo + 2, 2}, {carrello + 1, rullo + 3, 2}, {carrello + 1, rullo + 4, 2},
-                        {carrello + 2, rullo + 5, 2}, {carrello + 3, rullo + 5, 2},
-                        {carrello + 4, rullo + 5, 2}, {carrello + 5, rullo + 5, 2},
-                        {carrello + 6, rullo + 4, 2}, {carrello + 6, rullo + 3, 2}, {carrello + 6, rullo + 2, 2},
-                        {carrello + 6, rullo + 1, 2}, {carrello + 5, rullo, 2}, {carrello + 4, rullo, 2},
+                        {carrello+5, rullo, 2}, {carrello+4, rullo, 2}, {carrello+3, rullo, 2}, {carrello+2, rullo, 2},
+                        {carrello+1, rullo+1, 2}, {carrello+1, rullo+2, 2},
+                        {carrello+2, rullo+3, 2}, {carrello+3, rullo+3, 2}, {carrello+4, rullo+3, 2}, {carrello+5 , rullo+3, 2},
+                        {carrello+6, rullo+2, 2}, {carrello+6, rullo+1, 2},
                 },
                 {
                         //CODINA
-                        {carrello + 7, rullo + 5, 1}, {carrello + 8, rullo + 5, 1}, {carrello + 9, rullo + 5, 1}, {carrello + 10, rullo + 4, 1},
+                        //Penna che scende e ricalca la code della lettera
+                        {carrello+6, rullo+1, 1}, {carrello+6, rullo+2, 1},
+                        //************************************************
+                        {carrello+7, rullo+3, 1}, {carrello+8, rullo+3, 1}, {carrello+9, rullo+3, 1}, {carrello+10, rullo+2, 1},
                 },
                 {
-                        //PUNTO DI GUINTURA
-//                        {carrello, rullo + 5, 3}
+//                        PUNTO DI GUINTURA
+//                        eliminato nella modifica #0
+//                        {carrello, rullo+5}
                 }
         };
 
