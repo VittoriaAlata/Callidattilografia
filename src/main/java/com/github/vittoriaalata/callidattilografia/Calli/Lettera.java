@@ -12,20 +12,27 @@ public class Lettera {
         considerando l'unità di misura: il carattere [] rettangolare.
         Ideato il 23/03/2025 su documenti della Callidattilografia in formato cartaceo.
         */
+
+        /*
+                Applicazione della modifica #2
+        Ridisegno della lettera 'a', eliminata 1 colonna per seguire condizioni
+        per la rappresentazione calligrafica dei caratteri.
+        Ideato il 24/03/2025 su documenti della Callidattilografia in formato cartaceo.
+        */
         int[][] lettera = {
                 //CERCHIO
-                {carrello+5, rullo}, {carrello+4, rullo}, {carrello+3, rullo}, {carrello+2, rullo},
-                {carrello+1, rullo+1}, {carrello+1, rullo+2},
-                {carrello+2, rullo+3}, {carrello+3, rullo+3}, {carrello+4, rullo+3}, {carrello+5 , rullo+3},
-                {carrello+6, rullo+2}, {carrello+6, rullo+1},
+                {carrello + 4, rullo - 3, 2}, {carrello + 3, rullo - 3, 2}, {carrello + 2, rullo - 3, 2}, {carrello + 1, rullo - 3, 2},
+                {carrello, rullo - 2, 2}, {carrello, rullo - 1, 2},
+                {carrello + 1, rullo, 2}, {carrello + 2, rullo, 2}, {carrello + 3, rullo, 2}, {carrello + 4, rullo, 2},
+                {carrello + 5, rullo - 1, 2}, {carrello + 5, rullo - 1, 2},
                 //CODINA
                 //Penna che scende e ricalca la code della lettera
-                {carrello+6, rullo+1}, {carrello+6, rullo+2},
+                {carrello + 5, rullo - 2, 1}, {carrello + 5, rullo - 1, 1},
                 //************************************************
-                {carrello+7, rullo+3}, {carrello+8, rullo+3}, {carrello+9, rullo+3}, {carrello+10, rullo+2},
-                //PUNTO DI GUINTURA
-                //eliminato nella modifica #0
-                //{carrello, rullo+5}
+                {carrello + 6, rullo, 1}, {carrello + 7, rullo, 1}, {carrello + 8, rullo, 1}, {carrello + 9, rullo - 1, 1},
+//                        PUNTO DI GUINTURA
+//                        eliminato nella modifica #0
+//                        {carrello, rullo+5}
         };
 
         for (int[] punto : lettera) { //Per ogni array di coordinate nell' array della lettera
@@ -45,17 +52,17 @@ public class Lettera {
         int[][][] lettera = {
                 {
                         //CERCHIO
-                        {carrello+5, rullo, 2}, {carrello+4, rullo, 2}, {carrello+3, rullo, 2}, {carrello+2, rullo, 2},
-                        {carrello+1, rullo+1, 2}, {carrello+1, rullo+2, 2},
-                        {carrello+2, rullo+3, 2}, {carrello+3, rullo+3, 2}, {carrello+4, rullo+3, 2}, {carrello+5 , rullo+3, 2},
-                        {carrello+6, rullo+2, 2}, {carrello+6, rullo+1, 2},
+                        {carrello+5, rullo-3, 2}, {carrello+4, rullo-3, 2}, {carrello+3, rullo-3, 2}, {carrello+2, rullo-3, 2},
+                        {carrello+1, rullo-2, 2}, {carrello+1, rullo-1, 2},
+                        {carrello+2, rullo, 2}, {carrello+3, rullo, 2}, {carrello+4, rullo, 2}, {carrello+5 , rullo, 2},
+                        {carrello+6, rullo-1, 2}, {carrello+6, rullo-1, 2},
                 },
                 {
                         //CODINA
                         //Penna che scende e ricalca la code della lettera
-                        {carrello+6, rullo+1, 1}, {carrello+6, rullo+2, 1},
+                        {carrello+6, rullo-2, 1}, {carrello+6, rullo-1, 1},
                         //************************************************
-                        {carrello+7, rullo+3, 1}, {carrello+8, rullo+3, 1}, {carrello+9, rullo+3, 1}, {carrello+10, rullo+2, 1},
+                        {carrello+7, rullo, 1}, {carrello+8, rullo, 1}, {carrello+9, rullo, 1}, {carrello+10, rullo-1, 1},
                 },
                 {
 //                        PUNTO DI GUINTURA

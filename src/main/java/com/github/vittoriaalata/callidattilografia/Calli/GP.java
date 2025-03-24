@@ -151,7 +151,6 @@ public class GP {
     private String getInput(String prompt) throws IOException {
         System.out.print(prompt);
         String input = reader.readLine().trim();
-        if (input.isEmpty()) input = "M";
         return input;
     }
     public static void main(String[] args) throws IOException, InterruptedException {
