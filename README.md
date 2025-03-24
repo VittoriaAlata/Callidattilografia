@@ -55,4 +55,4 @@ Per compilare il progetto da riga di comando, segui questi passaggi:
 
 3. Esecuzione
    ```sh
-   java -cp out com.github.vittoriaalata.callidattilografia.GP
+   java -cp out com.github.vittoriaalata.callidattilografia.Calli.GP

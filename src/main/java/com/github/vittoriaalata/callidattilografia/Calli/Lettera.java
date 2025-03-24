@@ -1,6 +1,7 @@
 package com.github.vittoriaalata.callidattilografia.Calli;
 
-import static com.github.vittoriaalata.callidattilografia.Calli.Manuale.STAMPpixel;
+import static com.github.vittoriaalata.callidattilografia.Calli.GP.STAMPpixel;
+import static com.github.vittoriaalata.callidattilografia.Calli.GP.STAMPpixel3D;
 
 public class Lettera {
 
@@ -19,8 +20,38 @@ public class Lettera {
                 {carrello, rullo+5}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+        for (int[] punto : lettera) { //Per ogni array di coordinate nell' array della lettera
             STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+        return lettera;
+    }
+
+
+    public static int[][][] a3D(String[][] piano3D, int carrello, int rullo) throws InterruptedException {
+        int[][][] lettera = {
+                {
+                        //CERCHIO
+                        {carrello + 3, rullo, 2}, {carrello + 2, rullo, 2}, {carrello + 1, rullo + 1, 2},
+                        {carrello + 1, rullo + 2, 2}, {carrello + 1, rullo + 3, 2}, {carrello + 1, rullo + 4, 2},
+                        {carrello + 2, rullo + 5, 2}, {carrello + 3, rullo + 5, 2},
+                        {carrello + 4, rullo + 5, 2}, {carrello + 5, rullo + 5, 2},
+                        {carrello + 6, rullo + 4, 2}, {carrello + 6, rullo + 3, 2}, {carrello + 6, rullo + 2, 2},
+                        {carrello + 6, rullo + 1, 2}, {carrello + 5, rullo, 2}, {carrello + 4, rullo, 2},
+                },
+                {
+                        //CODINA
+                        {carrello + 7, rullo + 5, 1}, {carrello + 8, rullo + 5, 1}, {carrello + 9, rullo + 5, 1}, {carrello + 10, rullo + 4, 1},
+                },
+                {
+                        //PUNTO DI GUINTURA
+//                        {carrello, rullo + 5, 3}
+                }
+        };
+
+        for (int[][] sezione: lettera) {
+            for (int[] punto : sezione) {
+                STAMPpixel3D(piano3D, punto[0], punto[1], punto[2]); //Stampa il pixel nello schermo a quella coordinata}
+            }
         }
         return lettera;
     }
@@ -42,8 +73,8 @@ public class Lettera {
                 {carrello+20, rullo-4}, {carrello+21, rullo-4}, {carrello+22, rullo-4}, {carrello+23, rullo-4} //linea retta
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -58,8 +89,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -84,8 +115,8 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -116,8 +147,8 @@ public class Lettera {
                 {carrello+14, rullo}, {carrello+15, rullo}, {carrello+16, rullo}, {carrello+17, rullo}, {carrello+18, rullo} //Linea
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -134,8 +165,8 @@ public class Lettera {
                 {carrello+3, rullo-7}, {carrello+4, rullo-6}, {carrello+5, rullo-5}, {carrello+7, rullo-4}, {carrello+8, rullo-3}, {carrello+9, rullo-2}, {carrello+10, rullo-1}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -152,8 +183,8 @@ public class Lettera {
                 {carrello+3, rullo-7}, {carrello+4, rullo-6}, {carrello+5, rullo-5}, {carrello+7, rullo-4}, {carrello+8, rullo-3}, {carrello+9, rullo-2}, {carrello+10, rullo-1}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -172,8 +203,8 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -204,8 +235,8 @@ public class Lettera {
                 {carrello+14, rullo}, {carrello+15, rullo}, {carrello+16, rullo}, {carrello+17, rullo}, {carrello+18, rullo} //Linea
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -223,8 +254,8 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -242,8 +273,8 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -261,8 +292,8 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -278,8 +309,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -295,8 +326,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -312,8 +343,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -329,8 +360,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -346,8 +377,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -363,8 +394,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -380,8 +411,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -397,8 +428,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -414,8 +445,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -431,8 +462,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -448,8 +479,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
@@ -465,8 +496,8 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] COORDpunto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, COORDpunto[0], COORDpunto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
+            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
         return lettera;
     }
