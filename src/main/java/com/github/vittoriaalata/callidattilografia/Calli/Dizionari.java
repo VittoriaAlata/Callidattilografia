@@ -7,7 +7,7 @@ public class Dizionari {
     static HashMap<String, Integer> GiunzioneLettereCarrelloFinale = new HashMap<>();
     static HashMap<String, Integer> GiunzioneLettereRulloFinale = new HashMap<>();
     static {
-        GiunzioneLettereCarrelloFinale.put("a",10);
+        GiunzioneLettereCarrelloFinale.put("a",9);
         GiunzioneLettereCarrelloFinale.put("b",23);
         GiunzioneLettereCarrelloFinale.put("f",10);
         GiunzioneLettereCarrelloFinale.put("@",10);
