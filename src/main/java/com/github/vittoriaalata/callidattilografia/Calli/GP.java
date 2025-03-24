@@ -1,5 +1,7 @@
 package com.github.vittoriaalata.callidattilografia.Calli;
 
+import jdk.jfr.Name;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -149,7 +151,7 @@ public class GP {
     private String getInput(String prompt) throws IOException {
         System.out.print(prompt);
         String input = reader.readLine().trim();
-        if (input == null) input = "M";
+        if (input.isEmpty()) input = "M";
         return input;
     }
     public static void main(String[] args) throws IOException, InterruptedException {
