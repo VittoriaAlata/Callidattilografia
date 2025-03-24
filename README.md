@@ -27,7 +27,6 @@ Callidattilografia:.
         │       └───github
         │           └───vittoriaalata
         │               └───callidattilografia
-        │                   │   GP.java
         │                   │
         │                   └───Calli
         │                           Guidato.class
@@ -36,6 +35,7 @@ Callidattilografia:.
         │                           Lettera.java
         │                           Manuale.class
         │                           Manuale.java
+        │                           GP.java
         │
         └───resources
             └───META-INF
