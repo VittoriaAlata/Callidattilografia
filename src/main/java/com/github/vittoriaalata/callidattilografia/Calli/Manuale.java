@@ -3,10 +3,10 @@ package com.github.vittoriaalata.callidattilografia.Calli;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
 
 import static com.github.vittoriaalata.callidattilografia.Calli.Dizionari.GiunzioneLettereCarrelloFinale;
 import static com.github.vittoriaalata.callidattilografia.Calli.Dizionari.GiunzioneLettereRulloFinale;
+import static com.github.vittoriaalata.callidattilografia.Calli.GP.STAMPpixel;
 import static com.github.vittoriaalata.callidattilografia.Calli.GP.drawLine;
 
 

@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
 
 public class GP {
 
-    public static boolean DevMode = true;
+    public static boolean DevMode = false;
     private BufferedReader reader;
 
     public GP() {

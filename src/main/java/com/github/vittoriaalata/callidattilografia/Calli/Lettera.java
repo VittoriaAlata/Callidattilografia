@@ -5,7 +5,21 @@ import static com.github.vittoriaalata.callidattilografia.Calli.GP.STAMPpixel3D;
 
 public class Lettera {
 
-    public static int[][] a(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    private static void IterLettera2D(int[][] lettera, char[][] piano) throws InterruptedException {
+        for (int[] punto : lettera) { //Per ogni array di coordinate nell' array della lettera
+            STAMPpixel(piano, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
+        }
+    }
+
+    private static void IterLettera3D(int[][][] lettera, String[][] piano3D) throws InterruptedException {
+        for (int[][] sezione: lettera) {
+            for (int[] punto : sezione) {
+                STAMPpixel3D(piano3D, punto[0], punto[1], punto[2]); //Stampa il pixel nello schermo a quella coordinata}
+            }
+        }
+    }
+
+    public static int[][] a(char[][] piano, int carrello, int rullo) throws InterruptedException {
         /*
                 Applicazione della modifica #0 & #1
         Ridisegno della lettera 'a', eliminate 2 righe per avere la lettera più simmetrica
@@ -19,7 +33,7 @@ public class Lettera {
         per la rappresentazione calligrafica dei caratteri.
         Ideato il 24/03/2025 su documenti della Callidattilografia in formato cartaceo.
         */
-        int[][] lettera = {
+        int[][] a = {
                 //CERCHIO
                 {carrello + 4, rullo - 3, 2}, {carrello + 3, rullo - 3, 2}, {carrello + 2, rullo - 3, 2}, {carrello + 1, rullo - 3, 2},
                 {carrello, rullo - 2, 2}, {carrello, rullo - 1, 2},
@@ -35,12 +49,9 @@ public class Lettera {
 //                        {carrello, rullo+5}
         };
 
-        for (int[] punto : lettera) { //Per ogni array di coordinate nell' array della lettera
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
-        return lettera;
+        IterLettera2D(a, piano);
+        return a;
     }
-
 
     public static int[][][] a3D(String[][] piano3D, int carrello, int rullo) throws InterruptedException {
         /*
@@ -49,20 +60,27 @@ public class Lettera {
         considerando l'unità di misura: il carattere [] rettangolare.
         Ideato il 23/03/2025 su documenti della Callidattilografia in formato cartaceo.
         */
+
+        /*
+                Applicazione della modifica #2
+        Ridisegno della lettera 'a', eliminata 1 colonna per seguire condizioni
+        per la rappresentazione calligrafica dei caratteri.
+        Ideato il 24/03/2025 su documenti della Callidattilografia in formato cartaceo.
+        */
         int[][][] lettera = {
                 {
                         //CERCHIO
-                        {carrello+5, rullo-3, 2}, {carrello+4, rullo-3, 2}, {carrello+3, rullo-3, 2}, {carrello+2, rullo-3, 2},
-                        {carrello+1, rullo-2, 2}, {carrello+1, rullo-1, 2},
-                        {carrello+2, rullo, 2}, {carrello+3, rullo, 2}, {carrello+4, rullo, 2}, {carrello+5 , rullo, 2},
-                        {carrello+6, rullo-1, 2}, {carrello+6, rullo-1, 2},
+                        {carrello+4, rullo-3, 2}, {carrello+3, rullo-3, 2}, {carrello+2, rullo-3, 2}, {carrello+1, rullo-3, 2},
+                        {carrello, rullo-2, 2}, {carrello, rullo-1, 2},
+                        {carrello+1, rullo, 2}, {carrello+2, rullo, 2}, {carrello+3, rullo, 2}, {carrello+4, rullo, 2},
+                        {carrello+5, rullo-1, 2}, {carrello+5, rullo-1, 2},
                 },
                 {
                         //CODINA
                         //Penna che scende e ricalca la code della lettera
-                        {carrello+6, rullo-2, 1}, {carrello+6, rullo-1, 1},
+                        {carrello+5, rullo-2, 1}, {carrello+5, rullo-1, 1},
                         //************************************************
-                        {carrello+7, rullo, 1}, {carrello+8, rullo, 1}, {carrello+9, rullo, 1}, {carrello+10, rullo-1, 1},
+                        {carrello+6, rullo, 1}, {carrello+7, rullo, 1}, {carrello+8, rullo, 1}, {carrello+9, rullo-1, 1},
                 },
                 {
 //                        PUNTO DI GUINTURA
@@ -71,15 +89,11 @@ public class Lettera {
                 }
         };
 
-        for (int[][] sezione: lettera) {
-            for (int[] punto : sezione) {
-                STAMPpixel3D(piano3D, punto[0], punto[1], punto[2]); //Stampa il pixel nello schermo a quella coordinata}
-            }
-        }
+        IterLettera3D(lettera, piano3D);
         return lettera;
     }
 
-    public static int[][] b(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] b(char[][] piano, int carrello, int rullo) throws InterruptedException {
         // Simula la scrittura della lettera "b" a bassa risoluzione
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, //linea dritta
@@ -96,13 +110,11 @@ public class Lettera {
                 {carrello+20, rullo-4}, {carrello+21, rullo-4}, {carrello+22, rullo-4}, {carrello+23, rullo-4} //linea retta
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] c(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] c(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+5, rullo-6},
                 {carrello+4, rullo-7}, {carrello+3, rullo-7}, {carrello+2, rullo-7},
@@ -112,13 +124,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] d(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] d(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo-7}, {carrello+2, rullo-7},
                 {carrello+1, rullo-6}, {carrello+1, rullo-5}, {carrello+1, rullo-4}, {carrello+1, rullo-3}, {carrello+1, rullo-2}, {carrello+1, rullo-1},
@@ -138,13 +148,11 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] e(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] e(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo}, {carrello+4, rullo}, {carrello+5, rullo}, //Linea
                 {carrello+6, rullo-1}, {carrello+7, rullo-1}, {carrello+8, rullo-1}, //Linea
@@ -170,13 +178,11 @@ public class Lettera {
                 {carrello+14, rullo}, {carrello+15, rullo}, {carrello+16, rullo}, {carrello+17, rullo}, {carrello+18, rullo} //Linea
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] f(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] f(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
                 {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
@@ -188,13 +194,11 @@ public class Lettera {
                 {carrello+3, rullo-7}, {carrello+4, rullo-6}, {carrello+5, rullo-5}, {carrello+7, rullo-4}, {carrello+8, rullo-3}, {carrello+9, rullo-2}, {carrello+10, rullo-1}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] g(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] g(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
                 {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
@@ -206,13 +210,11 @@ public class Lettera {
                 {carrello+3, rullo-7}, {carrello+4, rullo-6}, {carrello+5, rullo-5}, {carrello+7, rullo-4}, {carrello+8, rullo-3}, {carrello+9, rullo-2}, {carrello+10, rullo-1}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] h(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] h(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
                 {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
@@ -226,13 +228,11 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] i(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] i(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo}, {carrello+4, rullo}, {carrello+5, rullo}, //Linea
                 {carrello+6, rullo-1}, {carrello+7, rullo-1}, {carrello+8, rullo-1}, //Linea
@@ -258,13 +258,11 @@ public class Lettera {
                 {carrello+14, rullo}, {carrello+15, rullo}, {carrello+16, rullo}, {carrello+17, rullo}, {carrello+18, rullo} //Linea
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] l(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] l(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
                 {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
@@ -277,13 +275,11 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] m(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] m(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
                 {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
@@ -296,13 +292,11 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] n(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] n(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello, rullo}, {carrello+1, rullo}, {carrello+2, rullo}, {carrello+3, rullo-1}, {carrello+4, rullo-2}, {carrello+5, rullo-3}, {carrello+6, rullo-4}, //Linea
                 {carrello+7, rullo-5}, {carrello+7, rullo-6}, {carrello+8, rullo-7}, {carrello+8, rullo-8}, {carrello+9, rullo-9}, {carrello+9, rullo-10}, //Linea //Curva
@@ -315,13 +309,11 @@ public class Lettera {
                 {carrello+11, rullo}, {carrello+12, rullo}, {carrello+13, rullo}, {carrello+14, rullo}, {carrello+15, rullo} //punti utili alla giuntura
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] o(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] o(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -332,13 +324,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] p(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] p(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -349,13 +339,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] q(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] q(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -366,13 +354,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] r(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] r(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -383,13 +369,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] s(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] s(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -400,13 +384,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] t(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] t(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -417,13 +399,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] u(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] u(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -434,13 +414,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] v(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] v(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -451,13 +429,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] w(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] w(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -468,13 +444,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] x(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] x(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -485,13 +459,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] y(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] y(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -502,13 +474,11 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 
-    public static int[][] z(char[][] screen, int carrello, int rullo) throws InterruptedException {
+    public static int[][] z(char[][] piano, int carrello, int rullo) throws InterruptedException {
         int[][] lettera = {
                 {carrello+3, rullo}, {carrello+2, rullo},
                 {carrello+1, rullo+1}, {carrello+1, rullo+2}, {carrello+1, rullo+3}, {carrello+1, rullo+4},
@@ -519,9 +489,7 @@ public class Lettera {
                 {carrello, rullo}
         };
 
-        for (int[] punto : lettera) { //Per ogni coordinata nell' array di interi di coordinate
-            STAMPpixel(screen, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
-        }
+        IterLettera2D(lettera, piano);
         return lettera;
     }
 }
