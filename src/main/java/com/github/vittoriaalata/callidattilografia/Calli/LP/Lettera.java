@@ -1,20 +1,20 @@
-package com.github.vittoriaalata.callidattilografia.Calli;
+package com.github.vittoriaalata.callidattilografia.Calli.LP;
 
-import static com.github.vittoriaalata.callidattilografia.Calli.GP.STAMPpixel;
-import static com.github.vittoriaalata.callidattilografia.Calli.GP.STAMPpixel3D;
+import static com.github.vittoriaalata.callidattilografia.Calli.GraphicalProcess.StampaCarattere;
+import static com.github.vittoriaalata.callidattilografia.Calli.GraphicalProcess.StampaCarattere3D;
 
-public class Lettera {
+public record Lettera() {
 
     private static void IterLettera2D(int[][] lettera, char[][] piano) throws InterruptedException {
         for (int[] punto : lettera) { //Per ogni array di coordinate nell' array della lettera
-            STAMPpixel(piano, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
+            StampaCarattere(piano, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
         }
     }
 
     private static void IterLettera3D(int[][][] lettera, String[][] piano3D) throws InterruptedException {
         for (int[][] sezione: lettera) {
             for (int[] punto : sezione) {
-                STAMPpixel3D(piano3D, punto[0], punto[1], punto[2]); //Stampa il pixel nello schermo a quella coordinata}
+                StampaCarattere3D(piano3D, punto[0], punto[1], punto[2]); //Stampa il pixel nello schermo a quella coordinata}
             }
         }
     }
