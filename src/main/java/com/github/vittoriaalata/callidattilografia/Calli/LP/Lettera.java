@@ -1,21 +1,36 @@
 package com.github.vittoriaalata.callidattilografia.Calli.LP;
 
-import static com.github.vittoriaalata.callidattilografia.Calli.GraphicalProcess.StampaCarattere;
-import static com.github.vittoriaalata.callidattilografia.Calli.GraphicalProcess.StampaCarattere3D;
+import static com.github.vittoriaalata.callidattilografia.Calli.Costanti.*;
+import static com.github.vittoriaalata.callidattilografia.Calli.GraphicalProcess.*;
 
 public record Lettera() {
 
     private static void IterLettera2D(int[][] lettera, char[][] piano) throws InterruptedException {
-        for (int[] punto : lettera) { //Per ogni array di coordinate nell' array della lettera
-            StampaCarattere(piano, punto[0], punto[1]); //Stampa il pixel nello schermo a quella coordinata
+        for (int[] punto : lettera) {
+            StampaCarattere(piano, punto[0], punto[1]);
         }
     }
 
     private static void IterLettera3D(int[][][] lettera, String[][] piano3D) throws InterruptedException {
+        RichiestaInputSezioniMSG();
         for (int[][] sezione: lettera) {
             for (int[] punto : sezione) {
-                StampaCarattere3D(piano3D, punto[0], punto[1], punto[2]); //Stampa il pixel nello schermo a quella coordinata}
+                StampaCarattere3D(piano3D, punto[0], punto[1], punto[2]);
             }
+            AspettaSezioni();
+        }
+    }
+
+    private static void AspettaSezioni() throws InterruptedException {
+        Thread.sleep(DelayMillisSezioni);
+
+    }
+
+    private static void RichiestaInputSezioniMSG() {
+        if (RichiestaInputSezioni) {
+            System.out.println("Il carattere è composto da più sezioni che saranno evidenziate con colori diversi;");
+            System.out.println("se vuoi avanzare e vedere la scrittura delle varie sezioni del carattere premi INVIO");
+            getInput(caricamento);
         }
     }
 
@@ -82,11 +97,11 @@ public record Lettera() {
                         //************************************************
                         {carrello+6, rullo, 1}, {carrello+7, rullo, 1}, {carrello+8, rullo, 1}, {carrello+9, rullo-1, 1},
                 },
-                {
-//                        PUNTO DI GUINTURA
-//                        eliminato nella modifica #0
-//                        {carrello, rullo+5}
-                }
+//                {
+////                        PUNTO DI GUINTURA
+////                        eliminato nella modifica #0
+////                        {carrello, rullo+5}
+//                }
         };
 
         IterLettera3D(lettera, piano3D);

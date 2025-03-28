@@ -3,6 +3,7 @@ package com.github.vittoriaalata.callidattilografia.Calli;
 import com.github.vittoriaalata.callidattilografia.Calli.LP.LogicalProcess;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 import static com.github.vittoriaalata.callidattilografia.Calli.Costanti.*;
@@ -35,7 +36,7 @@ public class GraphicalProcess {
             TUI.CalliASCIIart();
             TUI.Copyright();
         }
-        String Modalita = getInput("\nInserisci la modalità di insegnamento? Insegnamento Manuale [M] / Insegnamento Guidato [G]:");
+        String Modalita = getInput("\nInserisci la modalità di insegnamento... Ripasso Manuale [M] o Insegnamento Guidato [G]: ");
         switch (Modalita){
             case "M": ScritturaSfondoPiano(piano); ScritturaSfondoPiano3D(piano3D); Manuale.main(null); break;
             case "G": ScritturaSfondoPiano3D(piano3D); Guidato.main(null); break;
@@ -61,8 +62,8 @@ public class GraphicalProcess {
         StampaPiano3D(Piano3D);
     }
     static void StampaPiano3D(String[][] piano3D) throws InterruptedException {
-        for (String[] row : piano3D) {
-            for (String c : row) {
+        for (String[] riga : piano3D) {
+            for (String c : riga) {
                 System.out.print(c);
             }
             System.out.println();
@@ -83,8 +84,8 @@ public class GraphicalProcess {
 
     static void StampaPiano(char[][] Piano) {
         Lava();
-        for (char[] row : Piano) {
-            for (char c : row) {
+        for (char[] riga : Piano) {
+            for (char c : riga) {
                 System.out.print(c);
             }
             System.out.println();
@@ -111,6 +112,7 @@ public class GraphicalProcess {
             }
         }
     }
+
     public static void StelleNelCielo() { //Stelle nel cielo
         int r = 1, xc = 5, yc = 5;
         for (int i = 0; i <= 180; i++) {
@@ -130,6 +132,12 @@ public class GraphicalProcess {
         return I;
     }
 
+    public static int getInteger(String prompt) {
+        System.out.print(prompt);
+        Scanner input = new Scanner(System.in);
+        int I = Integer.parseInt(input.nextLine().trim());
+        return Integer.valueOf(I);
+    }
     public static void main(String[] args) throws IOException, InterruptedException {
         GraphicalProcess Calli = new GraphicalProcess();
         Calli.start();

@@ -9,5 +9,8 @@ public enum Costanti {
     public static char UnitaSfondo = '░';
     public static String UnitaScrittura3D = "█";
     public static String UnitaSfondo3D = "░";
+    public static boolean RichiestaInputSezioni = true;
+    public static String caricamento = "...";
+    public static int DelayMillisSezioni = DevMode ? 0 : 1000;
 
 }

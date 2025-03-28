@@ -1,11 +1,18 @@
 package com.github.vittoriaalata.callidattilografia.Calli;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public enum TUI {
 
     Calli;
 
     public static void Versione(){
-        System.out.println("Callidattilografia [Versione 0.1.0-alpha]");
+        String VersioneLocale = "0.1.0-beta";
+        System.out.println("\n                                Callidattilografia [Versione " + VersioneLocale +"]");
     }
 
     public static void Copyright(){

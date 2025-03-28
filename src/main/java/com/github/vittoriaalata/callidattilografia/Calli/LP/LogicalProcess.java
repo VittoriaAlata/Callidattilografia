@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static com.github.vittoriaalata.callidattilografia.Calli.GraphicalProcess.getInteger;
 import static com.github.vittoriaalata.callidattilografia.Calli.LP.Dizionari.GiunzioneLettereCarrelloFinale;
 import static com.github.vittoriaalata.callidattilografia.Calli.LP.Dizionari.GiunzioneLettereRulloFinale;
 import static com.github.vittoriaalata.callidattilografia.Calli.GraphicalProcess.DisegnaLinea;
@@ -68,7 +69,7 @@ public class LogicalProcess {
                     case "@": Lettera.a3D(piano3D, CarrelloIniziale, RulloIniziale); break;
                     case "_": break;
                     case "-": break;
-                    case "*": int x0 = igetInput("x0: "); int y0 = igetInput("y0: "); int x1 = igetInput("x1: "); int y1 = igetInput("y1: "); BresenhamLine(piano, x0, y0, x1, y1);	System.out.println(x0 + y0 + x1 + y1); break;
+                    case "*": int x0 = getInteger("x0: "); int y0 = getInteger("y0: "); int x1 = getInteger("x1: "); int y1 = getInteger("y1: "); BresenhamLine(piano, x0, y0, x1, y1);	System.out.println(x0 + y0 + x1 + y1); break;
                     default:
                         System.out.println("Il carattere: \"" + ParolaDesiderata + "\" non è registrato nel programma per l'insegnamento visivo della scrittura");
                         return;
@@ -84,14 +85,6 @@ public class LogicalProcess {
         ***************************************************************
         ***************************************************************
         */
-    }
-
-
-
-
-    private Integer igetInput(String prompt) throws IOException {
-        System.out.print(prompt);
-        return Integer.valueOf(reader.readLine());
     }
 
     public static void BresenhamLine(char[][] piano, int x0, int y0, int x1, int y1) throws InterruptedException {
