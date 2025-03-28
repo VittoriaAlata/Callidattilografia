@@ -38,7 +38,7 @@ public record Lettera() {
                 {carrello + 4, rullo - 3, 2}, {carrello + 3, rullo - 3, 2}, {carrello + 2, rullo - 3, 2}, {carrello + 1, rullo - 3, 2},
                 {carrello, rullo - 2, 2}, {carrello, rullo - 1, 2},
                 {carrello + 1, rullo, 2}, {carrello + 2, rullo, 2}, {carrello + 3, rullo, 2}, {carrello + 4, rullo, 2},
-                {carrello + 5, rullo - 1, 2}, {carrello + 5, rullo - 1, 2},
+                {carrello + 5, rullo - 1, 2}, {carrello + 5, rullo - 2, 2},
                 //CODINA
                 //Penna che scende e ricalca la code della lettera
                 {carrello + 5, rullo - 2, 1}, {carrello + 5, rullo - 1, 1},
@@ -73,7 +73,7 @@ public record Lettera() {
                         {carrello+4, rullo-3, 2}, {carrello+3, rullo-3, 2}, {carrello+2, rullo-3, 2}, {carrello+1, rullo-3, 2},
                         {carrello, rullo-2, 2}, {carrello, rullo-1, 2},
                         {carrello+1, rullo, 2}, {carrello+2, rullo, 2}, {carrello+3, rullo, 2}, {carrello+4, rullo, 2},
-                        {carrello+5, rullo-1, 2}, {carrello+5, rullo-1, 2},
+                        {carrello+5, rullo-1, 2}, {carrello+5, rullo-2, 2},
                 },
                 {
                         //CODINA

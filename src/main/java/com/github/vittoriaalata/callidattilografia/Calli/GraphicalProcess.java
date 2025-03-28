@@ -11,7 +11,7 @@ import static com.github.vittoriaalata.callidattilografia.Calli.LP.LogicalProces
 
 public class GraphicalProcess {
 
-    public static void  ScritturaSfondoPiano(char[][] piano) throws InterruptedException{
+    public static void  ScritturaSfondoPiano(char[][] piano) {
         for (int i = 0; i < piano.length; i++) {
             for (int j = 0; j < piano[i].length; j++) {
                 piano[i][j] = UnitaSfondo;
@@ -20,7 +20,7 @@ public class GraphicalProcess {
     }
 
 
-    public static void  ScritturaSfondoPiano3D(String[][] piano3D) throws InterruptedException{
+    public static void  ScritturaSfondoPiano3D(String[][] piano3D) {
         for (int i = 0; i < piano3D.length; i++) {
             for (int j = 0; j < piano3D[i].length; j++) {
                 piano3D[i][j] = UnitaSfondo3D;
