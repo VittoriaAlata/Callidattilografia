@@ -23,4 +23,4 @@ jobs:
 
       # Step 3: Compilazione dei file Java
       - name: Compilazione del codice Java
-        run: javac -d out -sourcepath src/main/java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/*.java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/GP.java
+        run: javac -d out -sourcepath src/main/java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/*.java src/main/java/com/github/vittoriaalata/callidattilografia/Calli/GraphicalProcess.java
