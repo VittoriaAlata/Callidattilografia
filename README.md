@@ -17,29 +17,35 @@ Callidattilografia:.
 │   pom.xml
 │   README.md
 │
+├───.github
+│   └───workflows
+│           compilazione.yml
 │
-├───out
-│                                     
 ├───src
     ├───main
-        ├───java
-        │   └───com
-        │       └───github
-        │           └───vittoriaalata
-        │               └───callidattilografia
-        │                   │
-        │                   └───Calli
-        │                           Guidato.class
-        │                           Guidato.java
-        │                           Lettera.class
-        │                           Lettera.java
-        │                           Manuale.class
-        │                           Manuale.java
-        │                           GP.java
-        │
-        └───resources
-            └───META-INF
-                    MANIFEST.MF
+    │   ├───java
+    │   │   └───com
+    │   │       └───github
+    │   │           └───vittoriaalata
+    │   │               └───callidattilografia
+    │   │                   └───Calli
+    │   │                       │   Costanti.java
+    │   │                       │   GraphicalProcess.java
+    │   │                       │   Guidato.java
+    │   │                       │   Manuale.java
+    │   │                       │   TUI.java
+    │   │                       │
+    │   │                       └───LP
+    │   │                               Dizionari.java
+    │   │                               Lettera.java
+    │   │                               LogicalProcess.java
+    │   │
+    │   └───resources
+    │       └───META-INF
+    │               MANIFEST.MF
+    │
+    └───test
+        └───java
 ```
 ## Compilazione & Esecuzione
 
