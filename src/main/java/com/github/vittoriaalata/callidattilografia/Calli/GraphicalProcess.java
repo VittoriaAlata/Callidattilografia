@@ -31,12 +31,11 @@ public class GraphicalProcess {
 
     public void start() throws InterruptedException, IOException {
         if (!DevMode) {
-            StelleNelCielo();
             TUI.Versione();
             TUI.CalliASCIIart();
             TUI.Copyright();
         }
-        String Modalita = getInput("\nInserisci la modalità di insegnamento... Ripasso Manuale [M] o Insegnamento Guidato [G]: ");
+        String Modalita = getInput("\n\tSeleziona modalità: [M]anuale [G]uidata: ");
         switch (Modalita){
             case "M": ScritturaSfondoPiano(piano); ScritturaSfondoPiano3D(piano3D); Manuale.main(null); break;
             case "G": ScritturaSfondoPiano3D(piano3D); Guidato.main(null); break;
@@ -117,7 +116,7 @@ public class GraphicalProcess {
         int r = 1, xc = 5, yc = 5;
         for (int i = 0; i <= 180; i++) {
             double angle = Math.toRadians(i); int x = (int) (r * Math.cos(angle)) + xc; int y = (int) (r * Math.sin(angle)) + yc;
-            char[][] piano = new char[20][20];
+            char[][] piano = new char[10][10];
             for (int m = 0; m < piano.length; m++) for (int n = 4; n < piano[m].length; n++) piano[m][n] = ' ';
             //Controllo per evitare indici fuori limite
             if (x >= 0 && x < 30 && y >= 0 && y < 30) piano[y][x] = '*';
